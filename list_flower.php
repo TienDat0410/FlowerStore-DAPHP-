@@ -7,12 +7,7 @@ require_once("./Entities/typeflower.class.php");
 
 <?php
 include_once("./header.php");
-// if (!isset($_GET["color_id"])) {
-//     $flowers = flower::list_flower();
-// } else {
-//     $colorid = $_GET["color_id"];
-//     $flowers = flower::list_flower_by_cateid($colorid);
-// }
+session_start();
 if (!isset($_GET["typeflower_id"])) {
     $flowers = flower::list_flower();
 } else {

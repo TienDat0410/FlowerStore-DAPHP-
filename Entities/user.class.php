@@ -21,7 +21,7 @@ class User
     {
         $db = new Db();
         // adđ product into database
-        $sql = "INSERT INTO user (UserName, Email, Password) VALUES ('".mysqli_real_escape_string($db->connect(),
+        $sql = "INSERT INTO user (UserName, Email, password) VALUES ('".mysqli_real_escape_string($db->connect(),
         $this->userName)."', '".mysqli_real_escape_string($db->connect(),
         $this->email)."','".md5(mysqli_real_escape_string($db->connect(), $this->Password))."')"; 
         $result = $db->query_execute($sql);
@@ -31,7 +31,7 @@ class User
     public static function checkLogin($userName, $password){
         $password = md5($password);
         $db = new Db();
-        $sql = "SELECT * FROM user where UserName='$userName' AND Password='$password'";
+        $sql = "SELECT * FROM user where UserName='$userName' AND password='$password'";
         $result = $db->query_execute($sql);
         return $result;
     }

@@ -13,14 +13,13 @@
         $account = new User($u_name, $u_email, $u_pass);
         $result = $account->save();
         if(!$result)
-        { ?>
-            <script> alert('Có lỗi xảy ra, vui lòng kiểm tra lại!');</script>
-            <?php
+        { 
+            echo "<script> alert('Có lỗi xảy ra, vui lòng kiểm tra lại!')</script>";
         }
         else{
             //signup success
             $_SESSION['user'] = $u_name;
-            header('Location: list_flower.php');
+            header("Location: list_flower.php");
         }
     }
 ?>
