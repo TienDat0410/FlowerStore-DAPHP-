@@ -41,15 +41,11 @@ $typeflower = Typeflower::list_typeflower();
                     </h3>                   
                     <p>
                         Giá: <?php echo number_format($flower["price"], 0, ",", ".") ?> VND
-                    </p>
-                    <form id="add-to-cart-form" action="shopping_flow.php?action=add" method="POST">
-                        <input type="text" value="1" name="quantity[<?=$flower['id'] ?>]" size="2"><br>
-                        <input type="submit" value="Mua sản phẩm" class="btn btn-primary">
-                    </form>
+                    </p>                 
                     
-                    <!-- <p>
-                        <button type="button" class="btn  btn-danger">Mua Hàng</button>
-                    </p> -->
+                    <p>
+                    <a href="./shopping_flow.php?id=<?=$flower['flower_id']?>">  <button type="button" class="btn  btn-danger">Mua Hàng</button> </a>
+                    </p>
                 </div>
             </div>
         </div>
@@ -65,7 +61,7 @@ $typeflower = Typeflower::list_typeflower();
                     <p class="text-danger"><?php echo $item["flowerName"]; ?> </p>
                     <p class="text-ingo"><?php echo number_format($item["price"], 0, ",", ".") ?> VND</p>
                     <p>
-                        <button type="button" class="btn bth-primary">Mua hàng</button>
+                        <a href="./shopping_flow.php?id=<?=$item['flower_id']?>">  <button type="button" class="btn  btn-danger">Mua Hàng</button> </a>
                     </p>
                 </div>
             <?php   } ?>

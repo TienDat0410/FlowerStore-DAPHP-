@@ -14,17 +14,16 @@ if (isset($_POST["btnsubmit"])) {
     $typeflowerID = $_POST["txttypeflowerID"];
     // $picture = $_POST["txtpic"];
     // 
-
     $newFlower = new flower($flowerName, $colorID, $unit, $price, $available, $flowerPicture, $typeflowerID);
     // save in database
 
     $result = $newFlower->save();
 
     if (!$result) {
-        header("location: add_flower.php?failure");
+        header("Location: add_flower.php?failure");
         echo "Thất bại";
     } else {
-        header("location: index.php?inserted");
+        header("Location: list_flower.php?inserted");
     }
 }
 

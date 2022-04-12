@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Home | Flower-Shopper</title>
+    <title>Flower-Shopper</title>
     <link href="./static/css/bootstrap.min.css" rel="stylesheet">
     <link href="./static/css/font-awesome.min.css" rel="stylesheet">
     <link href="./static/css/prettyPhoto.css" rel="stylesheet">
@@ -44,7 +44,16 @@
 								<li><a href="#"><i class="fa fa-twitter"></i></a></li>
 								<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
 								<li><a href="#"><i class="fa fa-dribbble"></i></a></li>
-								<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+								<li><?php
+										session_start();
+										if(isset($_SESSION['user']) !=""){
+											echo "<h5>Xin Chào: ".$_SESSION['user']."<a href='../DA_manguonmo/logout.php'> Logout</a></h5>";
+										} 
+										else{
+											echo "<h5> Bạn chưa đăng nhập <a href='../DA_manguonmo/login.php'> Login</a> -
+											<a href='../DA_manguonmo/register.php'> Register</a></h5>";
+										}
+									?></li>
 							</ul>
 						</div>
 					</div>
@@ -57,7 +66,7 @@
 				<div class="row">
 					<div class="col-sm-4">
 						<div class="logo pull-left">
-							<a href="./index.php"><img src="./static/images/home/logo.png" alt="" /></a>
+							<a href="./list_flower.php"><img src="./static/images/home/logo.png" alt="" /></a>
 						</div>
 						<div class="btn-group pull-right">
 							<div class="btn-group">
@@ -90,7 +99,7 @@
 								<li><a href="#"><i class="fa fa-star"></i> Wishlist</a></li>
 								<li><a href="checkout.html"><i class="fa fa-crosshairs"></i> Checkout</a></li>
 								<li><a href="./shopping_flow.php"><i class="fa fa-shopping-cart"></i> Cart</a></li>
-								<li><a href="login.html"><i class="fa fa-lock"></i> Login</a></li>
+								<li><a href="./login.php"><i class="fa fa-lock"></i> Login</a></li>
 							</ul>
 						</div>
 					</div>
@@ -112,14 +121,14 @@
 						</div>
 						<div class="mainmenu pull-left">
 							<ul class="nav navbar-nav collapse navbar-collapse">
-								<li><a href="index.html" class="active">Home</a></li>
+								<li><a href="./list_flower.php" class="active">Home</a></li>
 								<li class="dropdown"><a href="#">Shop<i class="fa fa-angle-down"></i></a>
                                     <ul role="menu" class="sub-menu">
-                                        <li><a href="shop.html">Products</a></li>
-										<li><a href="product-details.html">Product Details</a></li> 
+                                        <li><a href="./list_flower.php">Products</a></li>
+										<li><a href="./add_flower.php">Add product</a></li> 
 										<li><a href="checkout.html">Checkout</a></li> 
-										<li><a href="cart.html">Cart</a></li> 
-										<li><a href="login.html">Login</a></li> 
+										<li><a href="./shopping_flow.php">Cart</a></li> 
+										<li><a href="./login.php">Login</a></li> 
                                     </ul>
                                 </li> 
 								<li class="dropdown"><a href="#">Blog<i class="fa fa-angle-down"></i></a>
