@@ -68,6 +68,21 @@ class flower
         $result = $db->select_to_array($sql);
         return $result;
     }
+    //lấy ds hoa cùng loại
+    public static function list_flower_relate($typeflower_id, $id){
+        $db = new Db();
+        $sql = "SELECT * FROM flower WHERE typeflower_id='$typeflower_id' AND flower_id !='$id'";
+        $result = $db->select_to_array($sql);
+        return $result;
+    }
+     // tìm hoa theo id
+     public static function get_flower($id)
+     {
+         $db = new Db();
+         $sql = "SELECT * FROM flower WHERE flower_id='$id'";
+         $result = $db->select_to_array($sql);
+         return $result;
+     }
 
 
 }

@@ -40,11 +40,11 @@ $typeflowers = Typeflower::list_typeflower();
         foreach ($flowers as $item) {
         ?>
             <div class="col-sm-4">
-                <img src="<?php echo "../DA_manguonmo/" . $item["flowerPicture"]; ?>" class="img-responsive" style="width: 100%;" alt="Image">
+               <a href="./flower_detail.php?id=<?=$item['flower_id']?>"> <img src="<?php echo "../DA_manguonmo/" . $item["flowerPicture"]; ?>" class="img-responsive" style="width: 100%;" alt="Image"></a>
                 <p class="text-danger"><?php echo $item["flowerName"]; ?></p>
-                <p class="text-info"><?php echo $item["price"]; ?></p>
+                <p class="text-info"><?php echo number_format($item["price"], 0, ",", ".") ?> VND</p>
                 <p>
-                    <button type="button" class="btn btn-primary">Mua Hoa </button>
+                    <!-- <button type="button" class="btn btn-primary" onclick="location.href='../DA_manguonmo/shopping_flow.php?id=<?php echo $item["flower_id"]; ?> '">Mua Hoa </button> -->
                 </p>
             </div>
         <?php } ?>
