@@ -32,7 +32,9 @@ class User
         $password = md5($password);
         $db = new Db();
         $sql = "SELECT * FROM user where UserName='$userName' AND password='$password'";
+        // $result = mysqli_query($sql);
         $result = $db->query_execute($sql);
+
         return $result;
     }
 }

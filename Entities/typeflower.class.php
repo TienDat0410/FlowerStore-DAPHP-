@@ -12,6 +12,14 @@ class Typeflower
         // 
         $this->typeName = $typeName;        
     }
+    //save
+    public function save(){
+        $db = new Db();
+        $sql = "INSERT INTO typeofflower(typeName) VALUES ('$this->typeName')";
+        $result = $db->query_execute($sql);
+        return $result;
+
+    }
     // lấy danh sách loại hoa
     public static function list_typeflower()
     {

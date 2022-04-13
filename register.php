@@ -1,5 +1,6 @@
 <?php include_once('./header.php'); ?>
 <?php
+    session_start();
     if(isset($_SESSION["user"])!=""){
         header("Location: list_flower.php");
     }

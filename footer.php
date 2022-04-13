@@ -62,7 +62,7 @@
 						<div class="video-gallery text-center">
 							<a href="#">
 								<div class="iframe-img">
-									<img src="./static/images/home/iframe4.png" alt="" />
+									<img src="./static/images/home/gallery1.jpg" alt="" />
 								</div>
 								<div class="overlay-icon">
 									<i class="fa fa-play-circle-o"></i>
