@@ -121,7 +121,6 @@ if (isset($_GET["inserted"])) {
                 ?>
             </select>
         </div>
-
     </div>
     <!-- picture -->
     <div class="row">

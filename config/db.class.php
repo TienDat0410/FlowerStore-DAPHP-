@@ -7,8 +7,8 @@ class Db
     public function connect()
     {
         $username = "root";
-        $password = "Aa@123";
-        $databasename = "flowershop";
+        $password = "dev";
+        $databasename = "flowerstore";
         $server = "localhost";
        // connect to databs
         if (!isset(self::$connection)) {
@@ -16,8 +16,9 @@ class Db
             $config = parse_ini_file("config.ini");
             self::$connection = new mysqli("localhost", $config["username"], $config["password"], $config["databasename"]);       
             // self::$connection = new mysqli($server, $username, $password, $databasename);
-           
+            echo "kết nối thành công";
         }
+        
         // ko kết nối được
         if(self::$connection == false) {
             echo "kết nối không thành công";
